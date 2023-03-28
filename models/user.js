@@ -39,7 +39,7 @@ module.exports.addUser = function(newUser, callback){
             if(err) throw err
             
             newUser.password = hash;
-            newUser.save(callback)      //How to replace this function??
+            newUser.save(callback)  
             
         })
     })
