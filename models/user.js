@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
-const config = require('../config/database');
 
 
-const UserSchema = mongoose.Schema({
+const Schema = mongoose.Schema
+let UserSchema = new Schema({
     name:{
         type:String
     },
@@ -21,8 +20,9 @@ const UserSchema = mongoose.Schema({
     }
 });
 
-const User=module.exports=mongoose.model('User', UserSchema)
+module.exports=mongoose.model('User', UserSchema)
 
+/*
 module.exports.getUserById = function(id, callback){
     User.findById(id, callback)
 }
@@ -32,14 +32,16 @@ module.exports.getUserByUsername = function(username, callback){
     User.findOne(query, callback)
 }
 
+
 module.exports.addUser = function(newUser, callback){
     bcrypt.genSalt(10, (err, salt)=>{
         bcrypt.hash(newUser.password, salt, (err, hash)=>{
             if(err) throw err
-            else{
-                newUser.password = hash;
-                newUser.save(callback)      //How to replace this function??
-            }
+            
+            newUser.password = hash;
+            newUser.save(callback)      //How to replace this function??
+            
         })
     })
 }
+*/
