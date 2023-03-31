@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "homepage": "https://Viiuska.github.io/Mean_Stack_Module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": "node app",
+    "deploy":"gh-pages -d public"
   },
   "author": "Viia",
   "license": "ISC",
@@ -15,6 +17,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "gh-pages": "^5.0.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.0",
     "passport": "^0.6.0",
